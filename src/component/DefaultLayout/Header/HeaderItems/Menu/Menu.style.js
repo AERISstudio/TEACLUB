@@ -3,6 +3,10 @@ import { css } from "@emotion/react";
 export const MenuContainer = css`
   display: flex;
   gap: 70px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 10px;
 `;
 
 export const MenuButton = css`

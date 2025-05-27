@@ -110,7 +110,10 @@ function MainCircle() {
                 right: "35px",
                 top: "90px",
               }}
-              animate={{ color: getTextColor() }}
+              animate={{ 
+                color: getTextColor(),
+                opacity: hoveredIndex === 0 ? 1 : 0 
+              }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
             >
               (regular)
@@ -172,7 +175,10 @@ function MainCircle() {
                 right: "-25px",
                 top: "90px",
               }}
-              animate={{ color: getTextColor() }}
+              animate={{ 
+                color: getTextColor(),
+                opacity: hoveredIndex === 1 ? 1 : 0 
+              }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
             >
               (software)
@@ -234,7 +240,10 @@ function MainCircle() {
                 right: "-25px",
                 top: "90px",
               }}
-              animate={{ color: getTextColor() }}
+              animate={{ 
+                color: getTextColor(),
+                opacity: hoveredIndex === 2 ? 1 : 0 
+              }}
               transition={{ duration: 0.2, ease: "easeInOut" }}
             >
               (economy)

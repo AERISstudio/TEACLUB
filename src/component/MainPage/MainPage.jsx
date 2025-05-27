@@ -59,8 +59,9 @@ function MainPage() {
           )}
         </AnimatePresence>
         <MainTitle />
-        <div css={{ height: "133px" }}></div>
-        <MainCircle />
+        <div css={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <MainCircle />
+        </div>
       </div>
     </>
   );
