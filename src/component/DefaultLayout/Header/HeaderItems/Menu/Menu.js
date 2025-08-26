@@ -1,5 +1,6 @@
 import { useRecoilValue } from "recoil";
 import { hoverStateAtom } from "../../../../../recoil/atoms/hoverStateAtom";
+import { Link } from "react-router-dom"; // 🔥 추가
 
 function Menu() {
   const hoverState = useRecoilValue(hoverStateAtom);
@@ -17,7 +18,6 @@ function Menu() {
     }
   };
 
-  // ----- styles (converted from .style.js to plain objects) -----
   const menuContainerStyle = {
     display: "flex",
     gap: "70px",
@@ -38,25 +38,32 @@ function Menu() {
     fontWeight: 600,
     lineHeight: "normal",
     cursor: "pointer",
+    textDecoration: "none", // 🔥 Link 밑줄 제거
   };
 
   return (
     <div style={menuContainerStyle}>
-      <button style={{ ...menuButtonStyle, color: getMenuColor() }}>
-        <div>홈</div>
-      </button>
-      <button style={{ ...menuButtonStyle, color: getMenuColor() }}>
-        <div>소개</div>
-      </button>
-      <button style={{ ...menuButtonStyle, color: getMenuColor() }}>
-        <div>예약</div>
-      </button>
-      <button style={{ ...menuButtonStyle, color: getMenuColor() }}>
-        <div>활동</div>
-      </button>
-      <button style={{ ...menuButtonStyle, color: getMenuColor() }}>
-        <div>지원</div>
-      </button>
+      <Link to="/" style={{ ...menuButtonStyle, color: getMenuColor() }}>
+        홈
+      </Link>
+      <Link to="/about" style={{ ...menuButtonStyle, color: getMenuColor() }}>
+        소개
+      </Link>
+      <Link
+        to="/reservation"
+        style={{ ...menuButtonStyle, color: getMenuColor() }}
+      >
+        예약
+      </Link>
+      <Link
+        to="/activity"
+        style={{ ...menuButtonStyle, color: getMenuColor() }}
+      >
+        활동
+      </Link>
+      <Link to="/support" style={{ ...menuButtonStyle, color: getMenuColor() }}>
+        지원
+      </Link>
     </div>
   );
 }
