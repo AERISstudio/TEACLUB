@@ -1,6 +1,6 @@
 // Header.js — merged: TEACLUBIcon, Menu, LoginButton
-import { Link } from "react-router-dom";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { NavLink } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 import { hoverStateAtom } from "../../../recoil/atoms/hoverStateAtom"; // 경로는 프로젝트 구조에 맞게 조정
 
 /* ---------------- TEACLUBIcon ---------------- */
@@ -95,7 +95,6 @@ function Menu() {
     textAlign: "center",
     fontFamily: "Inter",
     fontSize: "16px",
-    fontWeight: 600,
     lineHeight: "normal",
     cursor: "pointer",
     textDecoration: "none",
@@ -112,21 +111,57 @@ function Menu() {
         top: "10px",
       }}
     >
-      <Link to="/" style={{ ...linkBase }}>
+      <NavLink
+        to="/"
+        end
+        style={({ isActive }) => ({
+          ...linkBase,
+          fontWeight: isActive ? "bold" : 600,
+          textDecoration: isActive ? "underline" : "none",
+        })}
+      >
         홈
-      </Link>
-      <Link to="/about" style={{ ...linkBase }}>
+      </NavLink>
+      <NavLink
+        to="/about"
+        style={({ isActive }) => ({
+          ...linkBase,
+          fontWeight: isActive ? "bold" : 600,
+          textDecoration: isActive ? "underline" : "none",
+        })}
+      >
         소개
-      </Link>
-      <Link to="/reservation" style={{ ...linkBase }}>
+      </NavLink>
+      <NavLink
+        to="/reservation"
+        style={({ isActive }) => ({
+          ...linkBase,
+          fontWeight: isActive ? "bold" : 600,
+          textDecoration: isActive ? "underline" : "none",
+        })}
+      >
         예약
-      </Link>
-      <Link to="/activity" style={{ ...linkBase }}>
+      </NavLink>
+      <NavLink
+        to="/activity"
+        style={({ isActive }) => ({
+          ...linkBase,
+          fontWeight: isActive ? "bold" : 600,
+          textDecoration: isActive ? "underline" : "none",
+        })}
+      >
         활동
-      </Link>
-      <Link to="/support" style={{ ...linkBase }}>
+      </NavLink>
+      <NavLink
+        to="/join"
+        style={({ isActive }) => ({
+          ...linkBase,
+          fontWeight: isActive ? "bold" : 600,
+          textDecoration: isActive ? "underline" : "none",
+        })}
+      >
         지원
-      </Link>
+      </NavLink>
     </div>
   );
 }
